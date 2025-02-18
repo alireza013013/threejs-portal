@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.wrbgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(24, 24, 24);
+    position: absolute;
+    transform: scale(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+
+.bar-loading {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scale(0);
+    transform-origin: left;
+    transition: 0.5s;
+}
