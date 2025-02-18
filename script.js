@@ -84,7 +84,7 @@ const loadingManager = new THREE.LoadingManager(
 // texture loader
 const textureLoader = new THREE.TextureLoader(loadingManager)
 
-const bakedTexture = textureLoader.load("statics/baked2k.jpg")
+const bakedTexture = textureLoader.load("./statics/baked2k.jpg")
 bakedTexture.flipY = false
 bakedTexture.colorSpace = THREE.SRGBColorSpace
 
@@ -121,7 +121,7 @@ gui.addColor(debugObject, "endColor").name("endColorPortal").onChange(() => {
 
 
 // model
-gltfLoader.load('statics/protableSceneMerged.glb', (gltf) => {
+gltfLoader.load('./statics/protableSceneMerged.glb', (gltf) => {
 
     const bakedMesh = gltf.scene.children.find((child) => child.name == "Cube052")
     const portalLight = gltf.scene.children.find((child) => child.name == "portalLight")
