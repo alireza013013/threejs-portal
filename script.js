@@ -6,7 +6,8 @@ import fireFlyVertex from "./shaders/fireFly/vertex.glsl"
 import fireFlyFragment from "./shaders/fireFly/fragment.glsl"
 import portalVertex from "./shaders/portal/vertex.glsl"
 import portalFragment from "./shaders/portal/fragment.glsl"
-
+import bakedImage from "./statics/baked2k.jpg"
+import modelUrl from "./statics/protableSceneMerged.glb"
 
 // html element
 const overlay = document.getElementById("overlay")
@@ -84,7 +85,7 @@ const loadingManager = new THREE.LoadingManager(
 // texture loader
 const textureLoader = new THREE.TextureLoader(loadingManager)
 
-const bakedTexture = textureLoader.load("./statics/baked2k.jpg")
+const bakedTexture = textureLoader.load(bakedImage)
 bakedTexture.flipY = false
 bakedTexture.colorSpace = THREE.SRGBColorSpace
 
@@ -121,7 +122,7 @@ gui.addColor(debugObject, "endColor").name("endColorPortal").onChange(() => {
 
 
 // model
-gltfLoader.load('./statics/protableSceneMerged.glb', (gltf) => {
+gltfLoader.load(modelUrl, (gltf) => {
 
     const bakedMesh = gltf.scene.children.find((child) => child.name == "Cube052")
     const portalLight = gltf.scene.children.find((child) => child.name == "portalLight")
